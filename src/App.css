@@ -1,6 +1,10 @@
 .phone {
-  width: 375px;
-  height: 812px;
+  box-sizing: border-box;
+  max-width: 375px;
+  max-height: 812px;
+  width: 100vw;
+  height: 100vh;
   background-color: white;
   box-shadow: 3px 3px 25px 3px #00000054;
+  overflow: hidden;
 }
