@@ -1,16 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Prompt:400,600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap');
+
 .register-container {
   display        : flex;
   flex-direction : column;
   align-items    : center;
   justify-content: center;
-  padding        : 5em 2em;
+  padding        : 2em 2em;
 
   .reg-header {
-    font-family: inherit;
+    font-family: 'Kaushan Script', sans-serif;
+    font-size: 30px;
+    color: #ff5864;
   }
 
   .forms {
-    margin-top    : 3em;
+    margin-top    : 1em;
     font-family   : inherit;
     display       : flex;
     flex-direction: column;
@@ -25,11 +30,11 @@
 
     label {
       font-family: inherit;
-      font-size  : 20px;
+      font-size  : 14px;
     }
 
     input {
-      font-family     : inherit;
+      font-family     : 'Prompt';
       width           : 100%;
       box-shadow      : 0 3px 6px 0 #00000041;
       margin-top      : 5px;
@@ -37,7 +42,6 @@
       box-sizing      : border-box;
       padding         : 0 10px;
       font-size       : 16px;
-      font-family     : inherit;
       background-color: #f3f3f3;
       border          : 0px;
       border-radius   : 5px;
@@ -51,7 +55,7 @@
     }
 
     .party-drop {
-      font-family     : inherit;
+      font-family     : 'Prompt';
       width           : 100%;
       box-shadow      : 0 3px 6px 0 #00000041;
       margin-top      : 5px;
@@ -59,7 +63,6 @@
       box-sizing      : border-box;
       padding         : 0 10px;
       font-size       : 16px;
-      font-family     : inherit;
       background-color: #f3f3f3;
       border          : 0px;
       border-radius   : 5px;
@@ -92,12 +95,11 @@
       background   : rgb(255, 0, 190);
       background   : linear-gradient(to right, #fd297b, #ff5864, #ff655b);
       transition   : all 300ms ease-in-out;
-      box-shadow   : 0 3px 5px 0 #ff45b2;
+      box-shadow   : 0 3px 5px 0 #2e2e2e44;
       cursor       : pointer;
 
       &:hover {
         background-color: #ff5295;
-        box-shadow      : 0 0 16px 3px #ff45b2;
       }
 
       &:focus {
