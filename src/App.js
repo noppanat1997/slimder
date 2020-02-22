@@ -9,6 +9,7 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 import reducer from './reducer.js';
 import Register from './components/Register.js'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   const store = createStore(reducer, applyMiddleware(logger));
