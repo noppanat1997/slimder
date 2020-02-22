@@ -8,9 +8,11 @@ export default () => {
     const ele = document.querySelector("#party");
     if(ele.value==="FFP") {
       alert("ขออภัย! พรรคนี้ถูกยุบแล้ว");
+      history.push("/register");
     }
     else if(ele.value!=="PPP") {
       alert("ขออภัย! คุณไม่ใช่สลิ่ม");
+      history.push("/register");
     }
     else {
       history.push("/swipe");
