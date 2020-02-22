@@ -44,6 +44,7 @@
     box-sizing: border-box;
     padding: 40px 20px;
     overflow-y: scroll;
+    scroll-behavior: smooth;
   }
 
   .chat-input {
