@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Chat.scss';
 import Bubble from './Bubble';
 import { FaArrowLeft, FaEllipsisH, FaTelegramPlane } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 
 export default () => {
@@ -25,22 +26,26 @@ export default () => {
 
   const sendMsg = e => {
     e.preventDefault();
-    msgs.push({ name: 'Thanathorn', text: msg, isMe: true });
-    setMsg('');
-    setMsgs([
-      ...msgs,
-      {
-        name: 'Pareena',
-        text: 'สวัสดีครับ ผมเชียร์ลุงมานานแล้ว คุณล่ะเชียร์ยัง?',
-        isMe: false
-      }
-    ])
+    if (msg) {
+      msgs.push({ name: 'Thanathorn', text: msg, isMe: true });
+      setMsg('');
+      setMsgs([
+        ...msgs,
+        {
+          name: 'Pareena',
+          text: 'สวัสดีครับ ผมเชียร์ลุงมานานแล้ว คุณล่ะเชียร์ยัง?',
+          isMe: false
+        }
+      ])
+    }
   }
 
   return (
     <div className="chat-container">
       <div className="chat-header">
-        <FaArrowLeft className="back-btn"/>
+        <Link to="/swipe">
+          <FaArrowLeft className="back-btn"/>
+        </Link>
 
         <div className="user-info">
           <div className="profile-pic"></div>
@@ -65,7 +70,9 @@ export default () => {
           onKeyPress={e => e.key === 'Enter' ? sendMsg(e) : null}
           autoFocus
         />
-        <button onClick={sendMsg}><FaTelegramPlane /></button>
+        <button onClick={sendMsg}>
+          <FaTelegramPlane className="icon-btn"/>
+        </button>
       </div>
 
     </div>
