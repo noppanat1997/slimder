@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import ReactSwipe from 'react-swipe';
 import CardItem from './CardItem.js';
@@ -24,7 +25,9 @@ const Swipe = (props) => {
           <p className="username text-danger font-weight-bold" style={{fontSize:'35px'}}>slimder</p>
         </div>
 
-        <IoIosChatbubbles style={{fontSize:'35px'}} className="dot-btn"/>
+        <Link to="/match">
+          <IoIosChatbubbles style={{fontSize:'35px'}} className="dot-btn"/>
+        </Link>
         
       </div>
       <ReactSwipe
@@ -34,17 +37,19 @@ const Swipe = (props) => {
       >
         {mapAllCard}
       </ReactSwipe>
-      <div className="d-flex justify-content-center" style={{ marginTop: '10%' }}>
-        <button className="buttonSmall" onClick={() => reactSwipeEl.next()}>
+      <div className="d-flex justify-content-center than-padding mt-5" >
+        <button className="buttonSmall" onClick={() => reactSwipeEl.prev()}>
           <MdRefresh className="text-warning" style={{fontSize: '30px'}}/>
         </button>
         <button className="buttonBig" onClick={() => reactSwipeEl.next()}>
           <MdClose className="text-danger" style={{fontSize: '50px'}}/>
         </button>
-        <button className="buttonBig" onClick={() => reactSwipeEl.next()}>
-          <FaHeart className="text-info" style={{fontSize: '50px'}}/>
-        </button>
-        <button className="buttonSmall" onClick={() => reactSwipeEl.next()}>
+        <Link to="/match">
+          <button className="buttonBig">
+            <FaHeart className="text-info" style={{fontSize: '50px'}}/>
+          </button>
+        </Link>
+        <button className="buttonSmall">
           <MdLocationOn className="text-primary" style={{fontSize: '30px'}}/>
         </button>
       </div>

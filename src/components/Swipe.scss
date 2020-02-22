@@ -1,8 +1,8 @@
 .buttonSmall {
   background-color: #ffffff;
   border-radius :50%;
-  width :70px;
-  height:70px;
+  width: 70px;
+  height: 70px;
   border: 8px solid rgb(223, 223, 223);
 }
 .buttonSmall:hover { background-color: #e2e2e2;}
@@ -14,8 +14,8 @@
 .buttonBig {
   background-color: #ffffff;
   border-radius :50%;
-  width :120px;
-  height:120px;
+  width : 100px;
+  height: 100px;
   border: 8px solid rgb(223, 223, 223);
 }
 .buttonBig:hover { background-color: #e2e2e2;}
@@ -60,4 +60,8 @@
       font-size: 20px;
     }
   }
+}
+
+.than-padding {
+  padding: 0 20px;
 }
