@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap');
+
+.match-container {
+  display        : flex;
+  flex-direction : column;
+  flex-wrap      : wrap;
+  justify-content: center;
+  align-items    : center;
+  width          : 100%;
+  height         : 100%;
+  background     : #363636;
+
+  .header-match {
+    color      : white;
+    font-family: 'Kaushan Script', serif;
+    font-size  : 60px;
+  }
+
+  p {
+    color: white;
+  }
+
+  .pics {
+    display        : flex;
+    flex-direction : row;
+    justify-content: center;
+    width          : 100%;
+
+    img {
+      width        : 100px;
+      height       : 100px;
+      margin       : 0 10px;
+      border-radius: 50%;
+    }
+  }
+
+  .match-btn-container {
+    margin-top: 5em;
+
+    .btn {
+      width        : 100%;
+      font-size    : 18px;
+      font-family  : inherit;
+      font-weight  : bold;
+      padding      : 10px 0;
+      border-radius: 50px;
+      border       : 0;
+      color        : white;
+      background   : rgb(255, 0, 190);
+      background   : linear-gradient(to right, #fd297b, #ff5864, #ff655b);
+      transition   : all 300ms ease-in-out;
+      box-shadow   : 0 3px 5px 0 #2e2e2e;
+      cursor       : pointer;
+
+      &:hover {
+        background-color: #ff5295;
+        box-shadow      : 0 0 16px 3px #2e2e2e;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .btn_s {
+      margin-top   : 2em;
+      width        : 100%;
+      font-size    : 18px;
+      font-family  : inherit;
+      font-weight  : bold;
+      padding      : 10px 0;
+      border-radius: 50px;
+      border       : solid;
+      border-color: #fd297b;
+      color: white;
+      background   : #00000000;
+      transition   : all 300ms ease-in-out;
+      box-shadow   : 0 3px 5px 0 #2e2e2e;
+      cursor       : pointer;
+
+      &:hover {
+        background-color: #fd297b;
+        box-shadow      : 0 0 16px 3px #2e2e2e;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+}

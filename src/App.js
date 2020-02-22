@@ -12,6 +12,8 @@ import Register from './components/Register.js'
 
 const App = () => {
   const store = createStore(reducer, applyMiddleware(logger));
+  const name = "Pareena"
+
   return (
     <Provider store={store}>
       <div className="phone">
@@ -19,7 +21,7 @@ const App = () => {
           <Switch>
             <Route path="/register" component={Register} />
             <Route path="/swipe" component={Swipe} />
-            <Route path="/match" component={Match} />
+            <Route path="/match" render={()=><Match name={name}/>} />
             <Route path="/chat" component={Chat} />
             <Route exact path="/" component={null} />
           </Switch>
