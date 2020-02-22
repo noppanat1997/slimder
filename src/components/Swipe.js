@@ -35,16 +35,16 @@ const Swipe = (props) => {
         {mapAllCard}
       </ReactSwipe>
       <div className="d-flex justify-content-center" style={{ marginTop: '10%' }}>
-        <button className="buttonSmall" onClick={() => reactSwipeEl.next()}>
+        <button className="buttonSmall" onClick={() => reactSwipeEl.prev()}>
           <MdRefresh className="text-warning" style={{fontSize: '30px'}}/>
         </button>
         <button className="buttonBig" onClick={() => reactSwipeEl.next()}>
           <MdClose className="text-danger" style={{fontSize: '50px'}}/>
         </button>
-        <button className="buttonBig" onClick={() => reactSwipeEl.next()}>
+        <button className="buttonBig" >
           <FaHeart className="text-info" style={{fontSize: '50px'}}/>
         </button>
-        <button className="buttonSmall" onClick={() => reactSwipeEl.next()}>
+        <button className="buttonSmall" >
           <MdLocationOn className="text-primary" style={{fontSize: '30px'}}/>
         </button>
       </div>
@@ -60,7 +60,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     addMsgFn: (item) => {
-      return dispatch({ type: 'ADD_MSG', payload: item })
+      return dispatch({ type: 'ADD_USER', payload: item })
     }
   }
 }

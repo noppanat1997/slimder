@@ -6,7 +6,7 @@ const CardItem = (props) => {
       <Card style={{ width: '95%' }}>
         <Card.Img
           variant="top"
-          src="https://farm8.staticflickr.com/7500/15514383088_8477f9efc0_z_d.jpg"
+          src={props.data.path}
           style={{ overflow: 'hidden', position: 'relative', height: '18rem', objectFit: 'cover' }}
         />
         <Card.Body>
