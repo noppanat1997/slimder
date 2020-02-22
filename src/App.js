@@ -5,8 +5,9 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 import reducer from './reducer.js';
-import Register from './components/Register.js'
+import Register from './components/Register'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   const store = createStore(reducer, applyMiddleware(logger));

@@ -1,20 +1,32 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import ReactSwipe from 'react-swipe';
+import CardItem from './CardItem.js';
 
 const Swipe = (props) => {
-  const getName = () =>{
+  const getName = () => {
     const name = props.stateFromStore.data.user[0].name;
     return name;
   }
-  const clickHandler = (e) =>{
-    const tmpMsg = {id: 2,msg: 'yeah'};
+  const clickHandler = (e) => {
+    const tmpMsg = { id: 2, msg: 'yeah' };
     props.addMsgFn(tmpMsg);
   }
-  return (
-    <div>
-      <h1>{getName()}</h1>
-      <button onClick={clickHandler}>Click Me</button>
+  let reactSwipeEl;
+  const mapAllCard = props.stateFromStore.data.slim.map(item => (
+    <div key={item.id}>
+      <CardItem data={item} />
     </div>
+  ));
+  return (
+    <ReactSwipe
+      className="carousel"
+      swipeOptions={{ continuous: false }}
+      ref={el => (reactSwipeEl = el)}
+      stlye={{}}
+    >
+      {mapAllCard}
+    </ReactSwipe>
   );
 }
 
