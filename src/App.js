@@ -7,13 +7,13 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 import reducer from './reducer.js';
-import Register from './components/Register.jsx';
-import Match from './components/Match.jsx';
+import Register from './components/Register.js';
+import Match from './components/Match.js';
 
 const App = () => {
   const store = createStore(reducer, applyMiddleware(logger));
   const name = "Pareena"
-  
+
   return (
     <Provider store={store}>
       <div className="phone">
