@@ -92,12 +92,12 @@
       background   : rgb(255, 0, 190);
       background   : linear-gradient(to right, #fd297b, #ff5864, #ff655b);
       transition   : all 300ms ease-in-out;
-      box-shadow   : 0 3px 5px 0 #0000005e;
+      box-shadow   : 0 3px 5px 0 #ff45b2;
       cursor       : pointer;
 
       &:hover {
-        background-color: #ffa32b;
-        box-shadow      : 0 0 16px 3px #0000005e;
+        background-color: #ff5295;
+        box-shadow      : 0 0 16px 3px #ff45b2;
       }
 
       &:focus {
