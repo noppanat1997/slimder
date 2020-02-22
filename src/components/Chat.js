@@ -64,6 +64,7 @@ export default () => {
       <div className="chat-input">
         <input 
           id="input-chat"
+          type="text"
           placeholder="Type something..." 
           value={msg}
           onChange={e => setMsg(e.target.value)}
