@@ -1,0 +1,55 @@
+.home-container {
+  display        : flex;
+  flex-direction : column;
+  justify-content: center;
+  align-items    : center;
+  width          : 100%;
+  height         : 100%;
+  background     : white;
+
+  .logo {
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items    : center;
+    width          : 100%;
+
+    img {
+      height: 200px;
+    }
+  }
+
+  .name {
+    margin-top: 20px;
+    font-family: 'Kaushan Script', sans-serif;
+    font-size: 70px;
+    color      : #ff5864;
+  }
+
+  .home-btn {
+    margin-top: 10em;
+
+    .btn {
+      font-size    : 18px;
+      font-family  : inherit;
+      font-weight  : bold;
+      padding      : 10px 115px;
+      border-radius: 50px;
+      border       : 0;
+      color        : white;
+      background   : rgb(255, 0, 190);
+      background   : linear-gradient(to right, #fd297b, #ff5864, #ff655b);
+      transition   : all 300ms ease-in-out;
+      box-shadow   : 0 3px 5px 0 #2c2c2c4b;
+      cursor       : pointer;
+
+      &:hover {
+        background-color: #ffffff;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}

@@ -11,19 +11,19 @@ export default () => {
       <div className="forms">
         <div className="form-group">
           <label htmlFor="username">Username</label>
-          <input type="text" placeholder="Username" required/>
+          <input type="text" placeholder="ชื่อผู้ใช้" required/>
         </div>
         <div className="form-group">
           <label htmlFor="password">Password</label>
-          <input type="password" placeholder="Password" required minLength="8"/>
+          <input type="password" placeholder="รหัสผ่าน" required minLength="8"/>
         </div>
         <div className="form-group">
           <label htmlFor="firstname">First Name</label>
-          <input type="text" placeholder="First Name" required/>
+          <input type="text" placeholder="ชื่อจริง" required/>
         </div>
         <div className="form-group">
           <label htmlFor="age">Age</label>
-          <input type="text" placeholder="Age" required/>
+          <input type="text" placeholder="อายุ" required/>
         </div>
         <label htmlFor="party">Select a party</label>
         <select name="party" className="party-drop" required>
