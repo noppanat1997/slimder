@@ -10,16 +10,6 @@ export default () => {
   const [msgs, setMsgs] = useState([]);
 
   useEffect(() => {
-    setMsgs([
-      ...msgs,
-      {
-        name: 'Pareena',
-        text: 'สวัสดีครับ ผมเชียร์ลุงมานานแล้ว คุณล่ะเชียร์ยัง?',
-        isMe: false
-      }])
-  }, [])
-
-  useEffect(() => {
     const ele = document.querySelector('.chat-box');
     ele.scrollTop = ele.scrollHeight;
   }, [msgs])
