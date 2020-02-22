@@ -1,13 +1,27 @@
 import React from "react";
 import "./Register.scss";
+import { useHistory } from "react-router-dom";
 
 export default () => {
+  const history = useHistory();
+  const check = () => {
+    const ele = document.querySelector("#party");
+    if(ele.value==="FFP") {
+      alert("ขออภัย! พรรคนี้ถูกยุบแล้ว");
+    }
+    else if(ele.value!=="PPP") {
+      alert("ขออภัย! คุณไม่ใช่สลิ่ม");
+    }
+    else {
+      history.push("/swipe");
+    }
+  }
   return (
     <div className="register-container">
       <div className="reg-header">
         <h1>Register</h1>
       </div>
-      <form>
+      <form onSubmit={check} id="regis">
       <div className="forms">
         <div className="form-group">
           <label htmlFor="firstname">First Name</label>
@@ -15,10 +29,10 @@ export default () => {
         </div>
         <div className="form-group">
           <label htmlFor="age">Age</label>
-          <input type="text" placeholder="อายุ" required/>
+          <input type="number" placeholder="อายุ" required/>
         </div>
         <label htmlFor="party">Select a party</label>
-        <select name="party" className="party-drop" required>
+        <select name="party" className="party-drop" required id="party">
           <option value="">Select...</option>
           <option value="PPP">พลังประชารัฐ</option>
           <option value="PTP">เพื่อไทย</option>
