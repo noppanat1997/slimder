@@ -6,20 +6,37 @@ import CardItem from './CardItem.js';
 import './Swipe.scss';
 import { FaHeart } from 'react-icons/fa';
 import { MdClose, MdRefresh, MdLocationOn } from 'react-icons/md';
-import { FaArrowLeft} from 'react-icons/fa';
-import {IoIosChatbubbles} from 'react-icons/io';
+import { FaArrowLeft } from 'react-icons/fa';
+import { IoIosChatbubbles } from 'react-icons/io';
 
 const Swipe = (props) => {
+  let curId = 0;
   let reactSwipeEl;
   const mapAllCard = props.stateFromStore.data.slim.map(item => (
     <div key={item.id}>
       <CardItem data={item} />
     </div>
   ));
+  const prevHandler = (e) => {
+    curId = props.stateFromStore.data.matchId;
+    reactSwipeEl.prev();
+    if (curId < 1) curId = 0;
+    else if (curId >= 1) curId = curId - 1;
+    const newData = { matchId: curId };
+    props.setMatchId(newData);
+  }
+  const nextHandler = (e) => {
+    curId = props.stateFromStore.data.matchId;
+    reactSwipeEl.next();
+    if (curId > 2) curId = 3;
+    else if (curId <= 2) curId = curId + 1;
+    const newData = { matchId: curId };
+    props.setMatchId(newData);
+  }
   return (
     <div>
       <div className="chat-header">
-        <FaArrowLeft className="back-btn"/>
+        <FaArrowLeft className="back-btn" />
 
         <div className="user-info">
           <p className="username text-danger font-weight-bold" style={{fontSize:'35px'}}>Slimder</p>
@@ -28,7 +45,6 @@ const Swipe = (props) => {
         <Link to="/match">
           <IoIosChatbubbles style={{fontSize:'35px'}} className="dot-btn"/>
         </Link>
-        
       </div>
       <ReactSwipe
         className="carousel ml-3 mt-5"
@@ -38,11 +54,11 @@ const Swipe = (props) => {
         {mapAllCard}
       </ReactSwipe>
       <div className="d-flex justify-content-center than-padding mt-5" >
-        <button className="buttonSmall" onClick={() => reactSwipeEl.prev()}>
+        <button className="buttonSmall" onClick={prevHandler}>
           <MdRefresh className="text-warning" style={{fontSize: '30px'}}/>
         </button>
-        <button className="buttonBig" onClick={() => reactSwipeEl.next()}>
-          <MdClose className="text-danger" style={{fontSize: '50px'}}/>
+        <button className="buttonBig" onClick={nextHandler}>
+          <MdClose className="text-danger" style={{ fontSize: '50px' }} />
         </button>
         <Link to="/match">
           <button className="buttonBig">
@@ -64,8 +80,8 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = dispatch => {
   return {
-    addMsgFn: (item) => {
-      return dispatch({ type: 'ADD_MSG', payload: item })
+    setMatchId: (item) => {
+      return dispatch({ type: 'SET_MATCHID', payload: item })
     }
   }
 }

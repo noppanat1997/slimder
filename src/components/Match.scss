@@ -7,6 +7,7 @@
   width          : 100%;
   height         : 100%;
   background     : #363636;
+  font-family    : 'Roboto', serif;
 
   .header-match {
     color      : white;
@@ -37,6 +38,8 @@
 
     .btn {
       width        : 100%;
+      height       : 53px;
+      box-sizing   : border-box;
       font-size    : 18px;
       font-family  : inherit;
       font-weight  : bold;
@@ -63,14 +66,16 @@
     .btn_s {
       margin-top   : 2em;
       width        : 100%;
+      height       : 53px;
+      box-sizing   : border-box;
       font-size    : 18px;
       font-family  : inherit;
       font-weight  : bold;
       padding      : 10px 0;
       border-radius: 50px;
       border       : solid;
-      border-color: #fd297b;
-      color: white;
+      border-color : #fd297b;
+      color        : white;
       background   : #00000000;
       transition   : all 300ms ease-in-out;
       box-shadow   : 0 3px 5px 0 #2e2e2e;
