@@ -1,6 +1,7 @@
 
 .chat-container {
   height: 100%;
+  font-family: 'Roboto';
   position: relative;
 
   .chat-header {
@@ -32,6 +33,7 @@
       .username {
         font-size: 20px;
         margin: 0;
+        font-family: inherit;
       }
     }
 
