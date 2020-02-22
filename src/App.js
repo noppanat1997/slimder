@@ -8,9 +8,8 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 import reducer from './reducer.js';
-import Register from './components/Register'
+import Register from './components/Register.js'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Match from './components/Match.js';
 
 const App = () => {
   const store = createStore(reducer, applyMiddleware(logger));
