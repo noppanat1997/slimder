@@ -85,6 +85,10 @@
       background: linear-gradient(to right, #fd297b, #ff5864, #ff655b);
       
       &:focus { outline: none }
+
+      .icon-btn {
+        font-size: 22px;
+      }
     }
   }
 }
