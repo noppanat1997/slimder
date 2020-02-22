@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import ReactSwipe from 'react-swipe';
@@ -17,6 +17,11 @@ const Swipe = (props) => {
       <CardItem data={item} />
     </div>
   ));
+  useEffect(() => {
+    curId = 0;
+    const newData = { matchId: curId }
+    props.setMatchId(newData);
+  }, [])
   const prevHandler = (e) => {
     curId = props.stateFromStore.data.matchId;
     reactSwipeEl.prev();

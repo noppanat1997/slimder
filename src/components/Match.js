@@ -1,17 +1,20 @@
 import React from "react";
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import "./Match.scss";
 
-export default ({name}) => {
+const Match = (props) => {
+  const data = props.stateFromStore.data;
+
   return (
     <div className="match-container">
       <div className="header-match">
         Slim!
       </div>
-      <p>You and {name} are slim each other.</p>
+      <p>You and {data.slim[data.matchId].name} are slim each other.</p>
       <div className="pics">
-        <img src="https://github.com/thanapat722/eBid/blob/test_builds/src/assets/eLogo.png?raw=true" alt="" />
-        <img src="https://github.com/thanapat722/eBid/blob/test_builds/src/assets/eLogo.png?raw=true" alt="" />
+        <img src={data.slim[data.matchId].path} alt="" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTHoZmtS4AUAV-gZE4Pi3c7dC1lvELfQEWl50n3V1tH_1u-QLmm" alt="" />
       </div>
       <div className="match-btn-container">
         <Link to="/chat">
@@ -28,3 +31,11 @@ export default ({name}) => {
     </div>
   )
 }
+
+const mapStateToProps = state => {
+  return {
+    stateFromStore: state
+  }
+}
+
+export default connect(mapStateToProps, null)(Match);
