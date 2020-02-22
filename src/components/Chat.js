@@ -70,7 +70,9 @@ export default () => {
           onKeyPress={e => e.key === 'Enter' ? sendMsg(e) : null}
           autoFocus
         />
-        <button onClick={sendMsg}><FaTelegramPlane className="icon-btn"/></button>
+        <button onClick={sendMsg}>
+          <FaTelegramPlane className="icon-btn"/>
+        </button>
       </div>
 
     </div>

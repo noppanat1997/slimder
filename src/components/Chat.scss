@@ -40,9 +40,10 @@
   }
 
   .chat-box {
-    height: 75%;
+    height: calc(100% - 70px - 70px);
+    box-sizing: border-box;
     padding: 40px 20px;
-    overflow: scroll;
+    overflow-y: scroll;
   }
 
   .chat-input {
@@ -77,10 +78,9 @@
       justify-content: center;
       align-items: center;
       border-radius: 50%;
-      width: 50px;
-      height: 50px;
+      min-width: 50px;
+      min-height: 50px;
       border: none;
-      font-size: 22px;
       color: white;
       background: linear-gradient(to right, #fd297b, #ff5864, #ff655b);
       
