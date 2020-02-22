@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from 'react-bootstrap/Card'
+import Card from 'react-bootstrap/Card';
 const CardItem = (props) => {
   return (
     <div>
@@ -16,4 +16,5 @@ const CardItem = (props) => {
     </div>
   );
 }
+
 export default CardItem;

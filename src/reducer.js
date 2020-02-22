@@ -1,7 +1,7 @@
 const initialState = {
   data: {
     user: [
-      { id: 0, name: '' }
+      { id: 0, name: '',age: 0 }
     ],
     slim: [
       { id: 0, name: 'Tu', age: '65', path: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Vladimir_Putin_meeting_Prayut_Chan-o-cha_%282016-05-19%29-02_cropped1.jpg/200px-Vladimir_Putin_meeting_Prayut_Chan-o-cha_%282016-05-19%29-02_cropped1.jpg' },
@@ -14,7 +14,8 @@ const initialState = {
       { id: 1, msg: ['สวัสดีค่ะ','ดิชั้น นางสาว ปารีณา โรมานอฟ <3','อิช่อ!!','กุไม่คุยกับมึงง!!','ไปไหนก็ไป Eดอก','เหม็นสาบจริงๆ'] },
       { id: 2, msg: ['หวักลี','ว่าไงนะไม่ได้ยิน!!','นาฬิการึ','พวกนี้ยืมเพื่อนมา','เพื่อนตายหมดแล้ว!','ป๊าบ(เสียงตบหัว)'] },
       { id: 3, msg: ['สวัสดีครับ','พี่ไม่ค่อยใช้ลูกน้องนะ เพราะลูกน้องมันโหดไม่เท่าพี่','สมัยเรียนนี่ชกต่อยทุกวัน ต่อยเป็นอาชีพ ชนะห้องนี้เสร็จก็ไปชนะห้องอื่นต่อ','ตอนมีเรื่องฝั่งพี่ไปประมาณ 30 ฝั่งนู้นประมาณ 60 พี่เป็นคนเปิดทั้งหมด','ปกติเวลามีเรื่อง เค้าจะต้องมาหาพี่ก่อน เพราะพี่รู้จักทุกซุ้ม!!','เมื่อก่อนต่อยนักมวยแล้วนักมวยแพ้ พี่ไม่ฆ่ามันก็ดีแล้ว'] }
-    ]
+    ],
+    matchId: 0
   }
 }
 const reducer = (state = initialState, action) => {
@@ -25,6 +26,16 @@ const reducer = (state = initialState, action) => {
       console.log(pushName);
       newState.data.msg.push(pushName);
       return newState;
+    case 'SET_MATCHID':
+      console.log(action.payload.matchId);
+      const newData = {
+        ...state.data,
+        matchId : action.payload.matchId
+      }
+      return {
+        ...state,
+        data : newData
+      }
     default:
       break;
   }

@@ -10,14 +10,6 @@ export default () => {
       <form>
       <div className="forms">
         <div className="form-group">
-          <label htmlFor="username">Username</label>
-          <input type="text" placeholder="ชื่อผู้ใช้" required/>
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input type="password" placeholder="รหัสผ่าน" required minLength="8"/>
-        </div>
-        <div className="form-group">
           <label htmlFor="firstname">First Name</label>
           <input type="text" placeholder="ชื่อจริง" required/>
         </div>
