@@ -10,6 +10,7 @@ import logger from 'redux-logger';
 import reducer from './reducer.js';
 import Register from './components/Register.js'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Home from './components/Home.js'
 
 const App = () => {
   const store = createStore(reducer, applyMiddleware(logger));
@@ -24,7 +25,7 @@ const App = () => {
             <Route path="/swipe" component={Swipe} />
             <Route path="/match" render={()=><Match name={name}/>} />
             <Route path="/chat" component={Chat} />
-            <Route exact path="/" component={null} />
+            <Route exact path="/" component={Home} />
           </Switch>
         </BrowserRouter>
       </div>
