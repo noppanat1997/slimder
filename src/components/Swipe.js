@@ -22,7 +22,7 @@ const Swipe = (props) => {
         <FaArrowLeft className="back-btn"/>
 
         <div className="user-info">
-          <p className="username text-danger font-weight-bold" style={{fontSize:'35px'}}>slimder</p>
+          <p className="username text-danger font-weight-bold" style={{fontSize:'35px'}}>Slimder</p>
         </div>
 
         <Link to="/match">

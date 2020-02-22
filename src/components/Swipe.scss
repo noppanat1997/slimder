@@ -4,7 +4,10 @@
   width: 70px;
   height: 70px;
   border: 8px solid rgb(223, 223, 223);
+
+  &:focus { outline: none }
 }
+
 .buttonSmall:hover { background-color: #e2e2e2;}
 
 .buttonSmall:active {
@@ -17,6 +20,7 @@
   width : 100px;
   height: 100px;
   border: 8px solid rgb(223, 223, 223);
+  &:focus { outline: none }
 }
 .buttonBig:hover { background-color: #e2e2e2;}
 
