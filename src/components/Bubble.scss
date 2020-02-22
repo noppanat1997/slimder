@@ -1,0 +1,42 @@
+
+.bubble-container {
+  display: flex;
+  justify-content: flex-start;
+  margin: 15px 0;
+
+  .bubble-pic {
+    background: palevioletred;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+
+  .bubble {
+    background: lightgray;
+    padding: 10px 20px;
+    border-radius: 30px;
+    max-width: 60%;
+
+    p {
+      font-size: 16px;
+      margin: 0;
+    }
+  }
+
+  &.me {
+    justify-content: flex-end;
+
+    .bubble {
+      background: #0084ff;
+      padding: 10px 20px;
+      border-radius: 30px;
+      max-width: 60%;
+
+      p {
+        margin: 0;
+        color: white;
+      }
+    }
+  }
+}

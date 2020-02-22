@@ -1,22 +1,31 @@
 import React from 'react';
 import './App.css';
-import Swipe from './components/Swipe.js';
-import Register from './components/Register.jsx';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-function App() {
+import Swipe from './components/Swipe.js';
+import Chat from './components/Chat.js';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import logger from 'redux-logger';
+import reducer from './reducer.js';
+import Register from './components/Register.js'
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
+const App = () => {
+  const store = createStore(reducer, applyMiddleware(logger));
   return (
-    <div className="phone">
-      <BrowserRouter className="phone">
-      <Switch>
-        <Route path="/register" component={Register}/>
-        <Route path="/swipe" component={null}/>
-        <Route path="/match" component={null}/>
-        <Route path="/chat" component={null}/>
-        <Route exact path="/" component={null}/>
-      </Switch>
-    </BrowserRouter>
-    </div>
+    <Provider store={store}>
+      <div className="phone">
+        <BrowserRouter>
+          <Switch>
+            <Route path="/register" component={Register} />
+            <Route path="/swipe" component={Swipe} />
+            <Route path="/match" component={null} />
+            <Route path="/chat" component={Chat} />
+            <Route exact path="/" component={null} />
+          </Switch>
+        </BrowserRouter>
+      </div>
+    </Provider>
   );
 }
-
 export default App;
