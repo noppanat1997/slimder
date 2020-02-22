@@ -1,10 +1,13 @@
 .buttonSmall {
   background-color: #ffffff;
   border-radius :50%;
-  width :70px;
-  height:70px;
+  width: 70px;
+  height: 70px;
   border: 8px solid rgb(223, 223, 223);
+
+  &:focus { outline: none }
 }
+
 .buttonSmall:hover { background-color: #e2e2e2;}
 
 .buttonSmall:active {
@@ -14,9 +17,10 @@
 .buttonBig {
   background-color: #ffffff;
   border-radius :50%;
-  width :120px;
-  height:120px;
+  width : 100px;
+  height: 100px;
   border: 8px solid rgb(223, 223, 223);
+  &:focus { outline: none }
 }
 .buttonBig:hover { background-color: #e2e2e2;}
 
@@ -58,6 +62,12 @@
 
     .username {
       font-size: 20px;
+      font-family: 'Kaushan Script';
+      margin: 0;
     }
   }
+}
+
+.than-padding {
+  padding: 0 20px;
 }

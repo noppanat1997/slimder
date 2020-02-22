@@ -10,16 +10,6 @@ export default () => {
   const [msgs, setMsgs] = useState([]);
 
   useEffect(() => {
-    setMsgs([
-      ...msgs,
-      {
-        name: 'Pareena',
-        text: 'สวัสดีครับ ผมเชียร์ลุงมานานแล้ว คุณล่ะเชียร์ยัง?',
-        isMe: false
-      }])
-  }, [])
-
-  useEffect(() => {
     const ele = document.querySelector('.chat-box');
     ele.scrollTop = ele.scrollHeight;
   }, [msgs])
@@ -64,6 +54,7 @@ export default () => {
       <div className="chat-input">
         <input 
           id="input-chat"
+          type="text"
           placeholder="Type something..." 
           value={msg}
           onChange={e => setMsg(e.target.value)}

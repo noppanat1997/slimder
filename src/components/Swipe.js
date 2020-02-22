@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import ReactSwipe from 'react-swipe';
 import CardItem from './CardItem.js';
@@ -38,11 +39,12 @@ const Swipe = (props) => {
         <FaArrowLeft className="back-btn" />
 
         <div className="user-info">
-          <p className="username text-danger font-weight-bold" style={{ fontSize: '35px' }}>slimder</p>
+          <p className="username text-danger font-weight-bold" style={{fontSize:'35px'}}>Slimder</p>
         </div>
 
-        <IoIosChatbubbles style={{ fontSize: '35px' }} className="dot-btn" />
-
+        <Link to="/match">
+          <IoIosChatbubbles style={{fontSize:'35px'}} className="dot-btn"/>
+        </Link>
       </div>
       <ReactSwipe
         className="carousel ml-3 mt-5"
@@ -51,18 +53,20 @@ const Swipe = (props) => {
       >
         {mapAllCard}
       </ReactSwipe>
-      <div className="d-flex justify-content-center" style={{ marginTop: '10%' }}>
+      <div className="d-flex justify-content-center than-padding mt-5" >
         <button className="buttonSmall" onClick={prevHandler}>
-          <MdRefresh className="text-warning" style={{ fontSize: '30px' }} />
+          <MdRefresh className="text-warning" style={{fontSize: '30px'}}/>
         </button>
         <button className="buttonBig" onClick={nextHandler}>
           <MdClose className="text-danger" style={{ fontSize: '50px' }} />
         </button>
-        <button className="buttonBig" >
-          <FaHeart className="text-info" style={{ fontSize: '50px' }} />
-        </button>
-        <button className="buttonSmall" >
-          <MdLocationOn className="text-primary" style={{ fontSize: '30px' }} />
+        <Link to="/match">
+          <button className="buttonBig">
+            <FaHeart className="text-info" style={{fontSize: '50px'}}/>
+          </button>
+        </Link>
+        <button className="buttonSmall">
+          <MdLocationOn className="text-primary" style={{fontSize: '30px'}}/>
         </button>
       </div>
     </div>
