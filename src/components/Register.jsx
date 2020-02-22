@@ -28,9 +28,11 @@ export default () => {
         <label htmlFor="party">Select a party</label>
         <select name="party" className="party-drop" required>
           <option value="">Select...</option>
-          <option value="PPP">PPP</option>
-          <option value="AAA">AAA</option>
-          <option value="BBB">BBB</option>
+          <option value="PPP">พลังประชารัฐ</option>
+          <option value="PTP">เพื่อไทย</option>
+          <option value="FFP">อนาคตใหม่</option>
+          <option value="DEM">ประชาธิปัตย์</option>
+          <option value="PJT">ภูมิใจไทย</option>
         </select>
       </div>
       <div className="footer">

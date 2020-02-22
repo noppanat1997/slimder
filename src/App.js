@@ -7,11 +7,13 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 import reducer from './reducer.js';
-import Register from './components/Register.js'
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Register from './components/Register.jsx';
+import Match from './components/Match.jsx';
 
 const App = () => {
   const store = createStore(reducer, applyMiddleware(logger));
+  const name = "Pareena"
+  
   return (
     <Provider store={store}>
       <div className="phone">
@@ -19,7 +21,7 @@ const App = () => {
           <Switch>
             <Route path="/register" component={Register} />
             <Route path="/swipe" component={Swipe} />
-            <Route path="/match" component={null} />
+            <Route path="/match" render={()=><Match name={name}/>} />
             <Route path="/chat" component={Chat} />
             <Route exact path="/" component={null} />
           </Switch>
