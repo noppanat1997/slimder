@@ -3,15 +3,19 @@ import './App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Swipe from './components/Swipe.js';
 import Chat from './components/Chat.js';
+import Match from './components/Match.js';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 import reducer from './reducer.js';
 import Register from './components/Register'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Match from './components/Match.js';
 
 const App = () => {
   const store = createStore(reducer, applyMiddleware(logger));
+  const name = "Pareena"
+
   return (
     <Provider store={store}>
       <div className="phone">
@@ -19,7 +23,7 @@ const App = () => {
           <Switch>
             <Route path="/register" component={Register} />
             <Route path="/swipe" component={Swipe} />
-            <Route path="/match" component={null} />
+            <Route path="/match" render={()=><Match name={name}/>} />
             <Route path="/chat" component={Chat} />
             <Route exact path="/" component={null} />
           </Switch>
